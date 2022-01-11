@@ -40,22 +40,6 @@ const Cell = styled.div<ICellProps>`
   &:hover {
     background-color: #8d44ad28;
   }
-
-  &.cell-0-0:after {
-    content: "Wyprowadz psa";
-  }
-  &.cell-0-1:after {
-    content: "Pozmywaj naczynia";
-  }
-  &.cell-0-2:after {
-    content: "Odrob lekcje";
-  }
-  &.cell-0-3:after {
-    content: "Posprzataj";
-  }
-  &.cell-0-4:after {
-    content: "Zjedz obiad";
-  }
 `;
 
 const PlayStopper = styled.div`
@@ -73,6 +57,34 @@ export interface IStartGame {
   start: boolean;
   symbol: "x" | "o";
 }
+
+const tasks = [
+  "task1",
+  "task2",
+  "task3",
+  "task4",
+  "task5",
+  "task6",
+  "task7",
+  "task8",
+  "task9",
+  "task10",
+  "task11",
+  "task12",
+  "task13",
+  "task14",
+  "task15",
+  "task16",
+  "task17",
+  "task18",
+  "task19",
+  "task20",
+  "task21",
+  "task22",
+  "task23",
+  "task24",
+  "task25",
+];
 
 export function Game() {
   const [matrix, setMatrix] = useState<IPlayMatrix>([
@@ -231,7 +243,9 @@ export function Game() {
                   style={{
                     background,
                   }}
-                ></Cell>
+                >
+                  {tasks[rowIdx * 5 + columnIdx]}
+                </Cell>
               );
             })}
           </RowContainer>
