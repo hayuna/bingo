@@ -6,6 +6,7 @@ import socketService from "./services/socketService";
 import { JoinRoom } from "./components/joinRoom";
 import GameContext, { IGameContextProps } from "./gameContext";
 import { Game } from "./components/game";
+import { TypeSymbol } from "./helper/models/Game.models";
 
 const AppContainer = styled.div`
   width: 100%;
@@ -31,7 +32,7 @@ const MainContainer = styled.div`
 
 function App() {
   const [isInRoom, setInRoom] = useState(false);
-  const [playerSymbol, setPlayerSymbol] = useState<"x" | "o">("x");
+  const [playerSymbol, setPlayerSymbol] = useState<TypeSymbol>(TypeSymbol.x);
   const [isPlayerTurn, setPlayerTurn] = useState(false);
   const [isGameStarted, setGameStarted] = useState(false);
 

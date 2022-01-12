@@ -1,5 +1,5 @@
 import { Socket } from "socket.io-client";
-import { IPlayMatrix, IStartGame } from "../../components/game";
+import { IPlayMatrix, IStartGame } from "../../helper/models/Game.models";
 
 class GameService {
     public async joinGameRoom(socket: Socket, roomId: string, name: string): Promise<boolean> {
