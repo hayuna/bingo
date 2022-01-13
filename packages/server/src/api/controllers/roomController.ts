@@ -24,7 +24,7 @@ export class RoomController {
 
         if (
             socketRooms.length > 0 ||
-            (connectedSockets && connectedSockets.size === 2)
+            (connectedSockets && connectedSockets?.size === 2)
         ) {
             socket.emit("room_join_error", {
                 error: "Room is full please choose another room to play!",
