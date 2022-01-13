@@ -34,22 +34,6 @@ const Cell = styled.div<ICellProps>`
   &:hover {
     background-color: #8d44ad28;
   }
-
-  &.cell-0-0:after {
-    content: "Wyprowadz psa";
-  }
-  &.cell-0-1:after {
-    content: "Pozmywaj naczynia";
-  }
-  &.cell-0-2:after {
-    content: "Odrob lekcje";
-  }
-  &.cell-0-3:after {
-    content: "Posprzataj";
-  }
-  &.cell-0-4:after {
-    content: "Zjedz obiad";
-  }
 `;
 
 const PlayStopper = styled.div`
