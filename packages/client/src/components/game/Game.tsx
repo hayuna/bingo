@@ -63,7 +63,33 @@ const PlayStopper = styled.div`
 `;
 
 
-
+const tasks: string[] = [
+  "task1",
+  "task2",
+  "task3",
+  "task4",
+  "task5",
+  "task6",
+  "task7",
+  "task8",
+  "task9",
+  "task10",
+  "task11",
+  "task12",
+  "task13",
+  "task14",
+  "task15",
+  "task16",
+  "task17",
+  "task18",
+  "task19",
+  "task20",
+  "task21",
+  "task22",
+  "task23",
+  "task24",
+  "task25",
+];
 
 
 export const Game = () => {
@@ -133,11 +159,14 @@ export const Game = () => {
 
   const updateGameMatrix = (column: number, row: number, symbol: TypeSymbol) => {
     const newMatrix = [...matrix];
+    const field = newMatrix[row][column];
 
-    if(newMatrix[row][column] === TypeSymbol.o || newMatrix[row][column] === TypeSymbol.x) {
+    if(field?.includes(symbol)) return;
+
+    if(field === TypeSymbol.o || field === TypeSymbol.x) {
       newMatrix[row][column] = TypeSymbol.ox;
       setMatrix(newMatrix);
-    } else if (newMatrix[row][column] === null || newMatrix[row][column] === 'null') {
+    } else if (field === null || field === 'null') {
       newMatrix[row][column] = symbol;
       setMatrix(newMatrix);
     }
@@ -212,11 +241,12 @@ export const Game = () => {
       {matrix.map((row, rowIdx) => {
 
         return (
-          <RowContainer>
+          <RowContainer key={rowIdx}>
             {row.map((column, columnIdx) => {
               const background = column ? chooseColor(column) : ''
               return (
                 <Cell
+                  key={columnIdx}
                   className={`cell-${rowIdx}-${columnIdx}`}
                   borderRight={columnIdx < 4}
                   borderLeft={columnIdx > 0}
@@ -228,7 +258,7 @@ export const Game = () => {
                   style={{
                     background,
                   }}
-                ></Cell>
+                >{tasks[rowIdx * 5 + columnIdx]}</Cell>
               );
             })}
           </RowContainer>
